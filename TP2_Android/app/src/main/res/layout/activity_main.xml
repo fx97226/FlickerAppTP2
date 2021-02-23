@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/usnm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/name"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:labelFor="@id/passwd"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/passwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/pwd"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:labelFor="@id/usnm"
+            android:text="@string/pwd" />
+
+        <Button
+            android:id="@+id/auth_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/auth"
+            android:onClick="Onclick"
+            android:text="@string/auth" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
