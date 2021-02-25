@@ -26,7 +26,9 @@ public class AsyncFlickrJSONDataForList extends AsyncTask<String,Void, JSONObjec
     public  AsyncFlickrJSONDataForList(MyAdapter a){
         this.adapter=a;
     }
+
     @Override
+    //handle the http connection the same way as we saw in the first part of the lab
     protected JSONObject doInBackground(String... strings) {
         JSONObject s = null;
         try {
@@ -65,6 +67,7 @@ public class AsyncFlickrJSONDataForList extends AsyncTask<String,Void, JSONObjec
     }
 
     @Override
+    //In this method we add all the url that we extracted from the api in an adapter list
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
         try{
@@ -72,7 +75,7 @@ public class AsyncFlickrJSONDataForList extends AsyncTask<String,Void, JSONObjec
             for (int i=0; i<items.length();i++){
                 Log.i("ok",""+i);
                 adapter.add(items.getJSONObject(i).getJSONObject("media").getString("m"));
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();//notifies the attached observers that the data has been changed
 
             }
         } catch (JSONException e) {

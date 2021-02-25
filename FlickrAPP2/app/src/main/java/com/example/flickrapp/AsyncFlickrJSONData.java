@@ -34,6 +34,7 @@ public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject>{
 
     @SuppressLint("WrongThread")
     @Override
+    //handle the http connection the same way as we saw in the first part of the lab
     protected JSONObject doInBackground(String... urls) {
         JSONObject s = null;
         try {
@@ -58,6 +59,8 @@ public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject>{
         return s;
     }
 
+
+    //method that we use to acess to the data from an input stream
     private JSONObject readStream(InputStream is) {
         try {
             ByteArrayOutputStream bo = new ByteArrayOutputStream();
@@ -76,6 +79,7 @@ public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject>{
     }
 
     @Override
+    //in this method we extract from  the Flickr API the Url of the image
     protected void onPostExecute(JSONObject jsonObject) {
         super.onPostExecute(jsonObject);
         JSONArray items = null;

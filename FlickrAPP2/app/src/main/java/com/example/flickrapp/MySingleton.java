@@ -19,6 +19,9 @@ public class MySingleton {
     @SuppressLint("StaticFieldLeak")
     private static Context ctx;
 
+    //this class is used in order to  to return the same instance of a class, every time,
+    // the same object of a class is returned every time we try to initialize an object of that particular class.
+
     private MySingleton(Context context) {
         ctx = context;
         requestQueue = getRequestQueue();
@@ -40,12 +43,15 @@ public class MySingleton {
                 });
     }
 
+    //This instance adds the post request in the volley RequestQueue, which sends requests to the server in order to get response
+    //every time a remote request is made, only a single instance is responsible for adding requests to the VolleyRequestQueue
     public static synchronized MySingleton getInstance(Context context) {
         if (instance == null) {
             instance = new MySingleton(context);
         }
         return instance;
     }
+
 
     public RequestQueue getRequestQueue() {
         if (requestQueue == null) {

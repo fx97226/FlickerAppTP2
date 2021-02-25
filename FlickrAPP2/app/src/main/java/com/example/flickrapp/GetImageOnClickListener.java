@@ -17,7 +17,7 @@ public class GetImageOnClickListener implements View.OnClickListener {
     public void onClick(View v) {
         String url = "https://www.flickr.com/services/feeds/photos_public.gne?tags=trees&format=json";
         AsyncFlickrJSONData task = new AsyncFlickrJSONData(this.app);
-        task.execute(url, null, null);
+        task.execute(url, null, null);//execute the first asynctask and display the image that we get from the api
     }
 
 }

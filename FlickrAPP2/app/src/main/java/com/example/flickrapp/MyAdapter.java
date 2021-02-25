@@ -70,7 +70,7 @@ public class MyAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context_list).inflate(R.layout.activity_list, parent, false);
         }
         // Lookup view for data population
-        TextView txtxv = (TextView) convertView.findViewById(R.id.textlistview);//crée un template d'item similaire a celui sélectionner
+        TextView txtxv = (TextView) convertView.findViewById(R.id.textlistview);//creates an item template similar to the selected one
         // Populate the data into the template view using the data object
         txtxv.setText(getItem(position).toString());*/
         // Return the completed view to render on screen

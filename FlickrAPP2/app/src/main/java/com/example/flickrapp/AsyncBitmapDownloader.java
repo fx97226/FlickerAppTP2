@@ -29,6 +29,8 @@ public class AsyncBitmapDownloader extends AsyncTask<String, Void, Bitmap> {
     }
 
     @Override
+    //handle the http connection the same way as we saw in the first part of the lab but with a bitmap object
+    //we will use this object to download the image from the API
     protected Bitmap doInBackground(String... strings) {
         URL url = null;
         Bitmap b= null;
